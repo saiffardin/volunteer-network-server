@@ -26,8 +26,8 @@ let client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: t
 client.connect((err, client) => {
     console.log("DB connected successfully");
 
-    const allActivitiesCollection = client.db("volunteerNetwork").collection("allActivities");
-    const allVolunteersCollection = client.db("volunteerNetwork").collection("allVolunteers");
+    const allActivitiesCollection = client?.db("volunteerNetwork").collection("allActivities");
+    const allVolunteersCollection = client?.db("volunteerNetwork").collection("allVolunteers");
 
     // load all activity
     app.get('/loadAll', (req, res) => {
